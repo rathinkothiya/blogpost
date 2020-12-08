@@ -1,0 +1,19 @@
+
+<%- include("partials/header.ejs") -%>
+<h1>Home</h1>
+
+<p><%= homeStartingContent %></p>
+
+
+<% for(i=0;i<list.length;i++){ %>
+
+  <h1> <%= list[i].title %> %></h1>
+    <% if(list[i].name.length >=20){ body = list[i].name.substring(0,20)+"..."; %>
+    <p><%= body %>  <a href="/posts/<%= list[i].title %> "> Read More</a></p>
+    <% }else{%>
+      <%= list[i].name %>
+    <%} %>
+
+
+<% } %>
+<%- include("partials/footer.ejs") -%>
